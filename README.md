@@ -3,7 +3,9 @@ A framework for MongoDB Atlas dedicated to Discord bot development. Used by Nefo
 
 ## Installing the framework
 Run this in your console.
-```npm i node-grau```
+```
+npm i node-grau
+```
 
 ## Using the framework
 It's simple, as it's a framework ofc.
