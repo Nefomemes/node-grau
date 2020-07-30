@@ -1,6 +1,6 @@
 {
   "name": "node-grau",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A framework for MongoDB Atlas dedicated to Discord bot development. Used by Nefomemes/Kylebot for database purposes.",
   "main": "database.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Nefomemes/node-grau.git"
-  },  
+  },
   "bugs": {
     "url": "https://github.com/Nefomemes/node-grau/issues"
   },
