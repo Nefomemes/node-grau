@@ -1,12 +1,13 @@
 const supported =  [String, Object, Number, Array];
 function main(url, dbName) {
+    const mod = this;
     (async function () {
         const { MongoClient } = require("mongodb");
         const assert = require("assert");
 
         MongoClient.connect(url, function (err, dbClient) {
             assert.equal(null, err);
-            this.client = dbClient;
+            mod.client = dbClient;
             db = dbClient.db(dbName);
             function getDoc(collection, docID) {
                 return new Promise(async (resolve, reject) => {
@@ -48,8 +49,8 @@ function main(url, dbName) {
                     }
                 })
             }
-            this.updateDoc = updateDoc;
-            this.getDoc = getDoc;
+            mod.updateDoc = updateDoc;
+            mod.getDoc = getDoc;
         });
     })();
 }
