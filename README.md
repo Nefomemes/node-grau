@@ -90,7 +90,7 @@ Update only a single document. If there is no document with that ID, it will be 
 | Parameter | Description | Type |
 | ----------- | ----------- | ---- |
 | `collection` | The collection you want to search the document in. | String |
-| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | Snowflake |
+| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | You can use either String, Object, Number, or Array. |
 | `operation` | Basically the operation you want to do, like `{$set: value}` or etc. You shouldn't add the `$currentDate` operator as the framework automatically sets it to `true`. | Object |
 
 ##### Example
