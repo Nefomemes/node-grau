@@ -2,7 +2,10 @@
 A framework for MongoDB Atlas dedicated to Discord bot development. Used by Nefomemes/Kylebot for database purposes.
 
 ## Installing the framework
-This framework is not yet published to Node Package Manager (NPM). Perhaps soon when Nefomemes/Kylebot goes beta.
+Run this in your console.
+```
+npm i node-grau
+```
 
 ## Using the framework
 It's simple, as it's a framework ofc.
