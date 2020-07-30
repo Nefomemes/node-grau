@@ -1,3 +1,4 @@
+const supported =  [String, Object, Number];
 function main(url, dbName) {
     (async function () {
         const { MongoClient } = require("mongodb");
@@ -11,8 +12,9 @@ function main(url, dbName) {
                 return new Promise(async (resolve, reject) => {
                     try {
                         (async function () {
-                            if (await !collection || collection.constructor !== String) reject("Not a valid collection!");
-                            if (await !docID || Number.isNaN(parseInt(docID)) || docID.constructor !== String) reject("Not a snowflake!");
+                       
+                            if (await !collection || collection.constructor !== String) reject("An invalid collection was provided.");
+                            if (await !docID || !supported.includes(docID.constructor)) reject("Not a valid ID!");
                             var doc = await db.collection(collection).findOne({ docID: docID });
 
                             if (!doc) {
@@ -32,9 +34,10 @@ function main(url, dbName) {
                 return new Promise(async (resolve, reject) => {
                     try {
                         (async function () {
+                           
                             if (await !collection || collection.constructor !== String) reject("An invalid collection was provided.");
                             if (await !operation || operation.constructor !== Object) reject("`operation` is not an object!");
-                            if (await !docID || Number.isNaN(parseInt(docID)) || docID.constructor !== String) reject("Not a snowflake!");
+                            if (await !docID || !supported.includes(docID.constructor)) reject("Not a valid ID!");
                             await delete operation.$currentDate;
                             await getDoc(docID);
                             await db.collection(collection).updateOne({ docID: docID }, { ...operation, $currentDate: { lastModified: true } })
