@@ -1,8 +1,8 @@
 # node-grau
 A framework for MongoDB Atlas dedicated to Discord bot development. Used by Nefomemes/Kylebot for database purposes.
 
-## Installing the dependency
-This dependency is not yet published to Node Package Manager (NPM). Perhaps soon when Nefomemes/Kylebot goes beta.
+## Installing the framework
+This framework is not yet published to Node Package Manager (NPM). Perhaps soon when Nefomemes/Kylebot goes beta.
 
 ## Using the framework
 It's simple, as it's a framework ofc.
@@ -97,3 +97,14 @@ console.log(JSON.stringify(db.updateDoc('users', '665419057075585025', {$set: {p
 
 ##### Returns
 Object (the updated document).
+
+## Frequently Asked Question
+
+### Why node-grau?
+Idk.
+
+### Why you choose the name 'node-grau'?
+Grau 5.56 was a meta weapon in Call of Duty: Modern Warfare / Warzone, especially before the 'Season 4: Reloaded' update which was when Infinity Ward, the developer, nerfed it. Although it's not as OP as before, it's still used until today, (especially by cheaters lol).
+
+### More features, please.
+Soon.
