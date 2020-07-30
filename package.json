@@ -17,5 +17,13 @@
   "license": "MIT",
   "dependencies": {
     "mongodb": "^3.5.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nefomemes/node-grau.git"
+  },  
+  "bugs": {
+    "url": "https://github.com/Nefomemes/node-grau/issues"
+  },
+  "homepage": "https://github.com/Nefomemes/node-grau"
 }
