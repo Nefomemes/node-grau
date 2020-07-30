@@ -69,7 +69,7 @@ Get only a single document. If there is no document with that ID, it will be cre
 | Parameter | Description | Type |
 | ----------- | ----------- | ---- |
 | `collection` | The collection you want to search the document in. | String |
-| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | String |
+| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | You can use either String, Object, Number, or Array. |
 
 ##### Example
 ```js

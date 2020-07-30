@@ -1,4 +1,4 @@
-const supported =  [String, Object, Number];
+const supported =  [String, Object, Number, Array];
 function main(url, dbName) {
     (async function () {
         const { MongoClient } = require("mongodb");
