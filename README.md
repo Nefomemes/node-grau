@@ -53,6 +53,9 @@ const db = new grau(process.env.DB, 'main')
 
 The database client.
 
+##### Returns
+Object (the database client)
+
 #### Methods
 
 **`getDoc()`**
