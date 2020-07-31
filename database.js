@@ -14,8 +14,8 @@ function main(url, dbName) {
                     try {
                         (async function () {
                        
-                            if (await !collection || collection.constructor !== String) reject("An invalid collection was provided.");
-                            if (await !docID || !supported.includes(docID.constructor)) reject("Not a valid ID!");
+                            if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
+                            if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
                             var doc = await db.collection(collection).findOne({ docID: docID });
 
                             if (!doc) {
@@ -35,10 +35,11 @@ function main(url, dbName) {
                 return new Promise(async (resolve, reject) => {
                     try {
                         (async function () {
-                           
-                            if (await !collection || collection.constructor !== String) reject("An invalid collection was provided.");
-                            if (await !operation || operation.constructor !== Object) reject("`operation` is not an object!");
-                            if (await !docID || !supported.includes(docID.constructor)) reject("Not a valid ID!");
+                        
+                            if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
+                            if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
+                            if (await !operation || await operation.constructor !== Object) reject("`operation` is not an object!");
+                      
                             await delete operation.$currentDate;
                             await getDoc(docID);
                             await db.collection(collection).updateOne({ docID: docID }, { ...operation, $currentDate: { lastModified: true } })
