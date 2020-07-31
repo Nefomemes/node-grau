@@ -10,13 +10,12 @@ function main(url, dbName) {
             mod.client = dbClient;
             db = dbClient.db(dbName);
             function getDoc(collection, docID) {
-                return new Promise(async (resolve, reject) => {
+                return new Promise( (resolve, reject) => {
                     try {
                         (async function () {
                        
                             if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
-                            if (await !docID) reject("Not a valid ID!");
-                            docID = docID.toString();
+                            if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
                             var doc = await db.collection(collection).findOne({ docID: docID });
 
                             if (!doc) {
@@ -33,25 +32,25 @@ function main(url, dbName) {
             }
 
             function updateDoc(collection, docID, operation) {
-                return new Promise(async (resolve, reject) => {
+                return new Promise((resolve, reject) => {
                     try {
                         (async function () {
                         
                             if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
-                            if (await !docID) reject("Not a valid ID!");
-                            docID = docID.toString();
+                            if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
                             if (await !operation || await operation.constructor !== Object) reject("`operation` is not an object!");
                       
                             await delete operation.$currentDate;
-                            await getDoc(docID);
+                            await getDoc(collection, docID);
                             await db.collection(collection).updateOne({ docID: docID }, { ...operation, $currentDate: { lastModified: true } })
-                            resolve(await getDoc(docID));
+                            await resolve( getDoc(collection, docID));
                         })()
                     } catch (e) {
                         reject(e);
                     }
                 })
             }
+
             mod.updateDoc = updateDoc;
             mod.getDoc = getDoc;
         });
