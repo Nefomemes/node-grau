@@ -15,7 +15,8 @@ function main(url, dbName) {
                         (async function () {
                        
                             if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
-                            if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
+                            if (await !docID) reject("Not a valid ID!");
+                            docID = docID.toString();
                             var doc = await db.collection(collection).findOne({ docID: docID });
 
                             if (!doc) {
@@ -37,7 +38,8 @@ function main(url, dbName) {
                         (async function () {
                         
                             if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
-                            if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
+                            if (await !docID) reject("Not a valid ID!");
+                            docID = docID.toString();
                             if (await !operation || await operation.constructor !== Object) reject("`operation` is not an object!");
                       
                             await delete operation.$currentDate;
