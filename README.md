@@ -34,7 +34,7 @@ console.log(JSON.stringify(db.getDoc('users', '665419057075585025')))
 
 ### grau()
 ----------
-,p>Is a contructor ofc, this is the setup function you need to get started.</p>
+<p>Is a contructor ofc, this is the setup function you need to get started.</p>
 
 #### Parameters
 | Parameter | Description |
@@ -73,8 +73,8 @@ Get only a single document. If there is no document with that ID, it will be cre
 ##### Parameters
 | Parameter | Description | Type |
 | ----------- | ----------- | ---- |
-| `collection` | The collection you want to search the document in. | String |
-| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | You can use either String, Object, Number, or Array. |
+| `collection` | The collection you want to search the document in. | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) |
+| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | You can use either [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), or [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). |
 
 ##### Example
 ```js
@@ -94,9 +94,9 @@ Update only a single document. If there is no document with that ID, it will be 
 ##### Parameters
 | Parameter | Description | Type |
 | ----------- | ----------- | ---- |
-| `collection` | The collection you want to search the document in. | String |
-| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | You can use either String, Object, Number, or Array. |
-| `operation` | Basically the operation you want to do, like `{$set: value}` or etc. You shouldn't add the `$currentDate` operator as the framework automatically sets it to `true`. | Object |
+| `collection` | The collection you want to search the document in. | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) |
+| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | You can use either [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), or [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). |
+| `operation` | Basically the operation you want to do, like `{$set: value}` or etc. You shouldn't add the `$currentDate` operator as the framework automatically sets it to `true`. | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) |
 
 ##### Example
 ```js
