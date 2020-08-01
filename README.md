@@ -1,7 +1,7 @@
 <div style="">
 <img src="https://i.imgur.com/0r8GHp9.png" width="100px" height="100px" style="float: right;" />
 
-<h1 style="border: none;">node-grau</h1>
+<h1 style="border: none; float: left;">node-grau</h1>
 
 <p>A framework for MongoDB Atlas dedicated to Discord bot development. Used by Nefomemes/Kylebot for database purposes.</p>
 
