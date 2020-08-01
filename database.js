@@ -38,7 +38,7 @@ function main(url, dbName) {
                         
                             if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
                             if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
-                            if (await !operation || await operation.constructor !== Object) reject("`operation` is not an object!");
+                            if (await !operation || await operation.constructor !== Object) reject("Not a valid operation!");
                       
                             await delete operation.$currentDate;
                             await getDoc(collection, docID);
@@ -50,9 +50,41 @@ function main(url, dbName) {
                     }
                 })
             }
+            function giveItem(collection, docID, string, item, strEconomy, money){
+                return new Promise((resolve, reject) => {
+                    try {
+                        (async function() {
+                            if(await !collection ||  !collection.constructor !== String) reject("An invalid collection was given!");
+                            if(await !docID ||  !supported.includes(docID.constructor)) reject("Not a valid ID!");
+                            if(await !string ||  !string.constructor !== String)reject("Not a valid inventory string!");
+                            if(await !item || item.constructor === Array)reject(reject("Not a valid item. This function does NOT support bulk giving."));
+                            if(await strEconomy && strEconomy.constructor !== String)reject("Not a valid economy string!");
+                            if(await money && money.constructor !== Number)reject("Not a valid value of money!");
+                            if(await strEconomy && !money)reject("strEconomy was specified but not money.");
+                            if(await money && !strEconomy)reject("money was specified but not strEconomy.");
+
+                            const doc = await getDoc(collection, docID);
+                            const ar = await doc[string]; 
+                            if(await ar.constructor !== Array)reject("The inventory string is not an array!");
+                            if(await ar.includes(item) && strEconomy && money){
+                                let obj = {};
+                                obj[strEconomy] = money;
+
+                                resolve(await updateDoc(collection, docID,{$inc: obj}));
+                            }
+                            let obj = {};
+                            obj[string] = item;
+                            resolve(await updateDoc(collection, docID, {$push: obj}));
+                        })()
+                    } catch(e) {
+                        reject(e);
+                    }
+                })
+            }
 
             mod.updateDoc = updateDoc;
-            mod.getDoc = getDoc;
+            mod.getDoc    = getDoc;
+            mod.giveItem = giveItem;
         });
     })();
 }
