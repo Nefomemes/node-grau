@@ -1,22 +1,27 @@
-# node-grau
-A framework for MongoDB Atlas dedicated to Discord bot development. Used by Nefomemes/Kylebot for database purposes.
+<div style="">
+<img src="https://i.imgur.com/0r8GHp9.png" width="100px" height="100px" style="float: right;" />
+
+<h1 style="border: none;">node-grau</h1>
+
+<p>A framework for MongoDB Atlas dedicated to Discord bot development. Used by Nefomemes/Kylebot for database purposes.</p>
 
 ## Installing the framework
-Run this in your console.
+<p>Run this in your console.</p>
+
 ```
 npm i node-grau
 ```
 
 ## Using the framework
-It's simple, as it's a framework ofc.
+<p>It's simple, as it's a framework ofc.</p>
 
-Before you use this framework, you should have a connection URL of a MongoDB Atlas cluster (or whatever connection url the MongoDB Node.js driver supports).
+<p>Before you use this framework, you should have a connection URL of a MongoDB Atlas cluster (or whatever connection url the MongoDB Node.js driver supports).</p>
 
-Because it has a password in it. It is recommended to put the connection url in an `.env` file.
+<p>Because it has a password in it. It is recommended to put the connection url in an `.env` file.</p>
 
-You may want to use the [`dotenv`](https://www.npmjs.com/package/dotenv) dependency if your hosting provider doesn't have an environment variable setup (or you simply uses localhost).
+<p>You may want to use the <a href="https://www.npmjs.com/package/dotenv">dotenv</a> dependency if your hosting provider doesn't have an environment variable setup (or you simply uses localhost).</p>
 
-Here we just give a quick code to show you how easy is to use this framework. The code below won't work though because the `url` variable have not been defined.
+<p>Here we just give a quick code to show you how easy is to use this framework. The code below won't work though because the `url` variable have not been defined.</p>
 
 ```js
 const grau = require("node-grau");
@@ -29,7 +34,7 @@ console.log(JSON.stringify(db.getDoc('users', '665419057075585025')))
 
 ### grau()
 ----------
-Is a contructor ofc, this is the setup function you need to get started.
+,p>Is a contructor ofc, this is the setup function you need to get started.</p>
 
 #### Parameters
 | Parameter | Description |
@@ -43,21 +48,21 @@ const db = new grau(process.env.DB, 'main')
 ```
 
 #### Properties
-- client
+- <p>client</p>
 
 #### Methods
 
-- getDoc()
-- updateDoc()
+- <p>getDoc()</p>
+- <p>updateDoc()</p>
 
 #### Properties
 
 **`client`**
 
-The database client.
+<p>The database client.</p>
 
 ##### Returns
-Object (the database client)
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object (the database client)</a></p>
 
 #### Methods
 
@@ -80,7 +85,7 @@ console.log(JSON.stringify(db.getDoc('users', '665419057075585025')))
 ```
 
 ##### Returns
-Object (the document obv)
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> (the document obv)</p>
 
 **updateDoc()**
 
@@ -102,15 +107,18 @@ console.log(JSON.stringify(db.updateDoc('users', '665419057075585025', {$set: {p
 ```
 
 ##### Returns
-Object (the updated document).
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> (the updated document).</p>
 
 ## Frequently Asked Question
 
 ### Why node-grau?
-Idk.
+<p>Idk.</p>
 
 ### Why you choose the name 'node-grau'?
-Grau 5.56 was a meta weapon in Call of Duty: Modern Warfare / Warzone, especially before the 'Season 4: Reloaded' update which was when Infinity Ward, the developer, nerfed it. Although it's not as OP as before, it's still used until today, (especially by cheaters lol).
+<p>Grau 5.56 was a meta weapon in <a href="">Call of Duty: Modern Warfare / Warzone</a>, especially before the 'Season 4: Reloaded' update which was when Infinity Ward, the developer, nerfed it. Although it's not as OP as before, it's still used until today, (especially by cheaters lol).</p>
 
 ### More features, please.
-Soon.
+<p>Soon.</p>
+
+Copyright 2020 Nefomemes. This framework is licensed under the MIT lisence. Some assets contains property owned by Activision (for example, in-game assets of Call of Duty: Modern Warfare).
+</div>

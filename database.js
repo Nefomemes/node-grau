@@ -65,8 +65,8 @@ function main(url, dbName) {
 
                             const doc = await getDoc(collection, docID);
                             const ar = await doc[string]; 
-                            if(await ar.constructor !== Array)reject("The inventory string is not an array!");
-                            if(await ar.includes(item) && strEconomy && money){
+                            if(await ar && ar.constructor !== Array)reject("The inventory string is not an array!");
+                            if(await ar && ar.includes(item) && strEconomy && money){
                                 let obj = {};
                                 obj[strEconomy] = money;
 
