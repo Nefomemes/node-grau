@@ -56,7 +56,7 @@ function main(url, dbName) {
                         (async function() {
                             if(await !collection ||  collection.constructor !== String) reject("An invalid collection was given!");
                             if(await !docID ||  !supported.includes(docID.constructor)) reject("Not a valid ID!");
-                            if(await !string ||  !string.constructor !== String)reject("Not a valid inventory string!");
+                            if(await !string ||  string.constructor !== String)reject("Not a valid inventory string!");
                             if(await !item || item.constructor === Array)reject(reject("Not a valid item. This function does NOT support bulk giving."));
                             if(await strEconomy && strEconomy.constructor !== String)reject("Not a valid economy string!");
                             if(await money && money.constructor !== Number)reject("Not a valid value of money!");
