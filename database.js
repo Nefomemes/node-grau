@@ -54,7 +54,7 @@ function main(url, dbName) {
                 return new Promise((resolve, reject) => {
                     try {
                         (async function() {
-                            if(await !collection ||  !collection.constructor !== String) reject("An invalid collection was given!");
+                            if(await !collection ||  collection.constructor !== String) reject("An invalid collection was given!");
                             if(await !docID ||  !supported.includes(docID.constructor)) reject("Not a valid ID!");
                             if(await !string ||  !string.constructor !== String)reject("Not a valid inventory string!");
                             if(await !item || item.constructor === Array)reject(reject("Not a valid item. This function does NOT support bulk giving."));
