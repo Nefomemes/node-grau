@@ -54,14 +54,14 @@ function main(url, dbName) {
                 return new Promise((resolve, reject) => {
                     try {
                         (async function() {
-                            if(await !collection ||  collection.constructor !== String) reject("An invalid collection was given!");
-                            if(await !docID ||  !supported.includes(docID.constructor)) reject("Not a valid ID!");
-                            if(await !string ||  string.constructor !== String)reject("Not a valid inventory string!");
-                            if(await !item || !supported.includes(item)) reject("Not a valid item. This function does NOT support bulk giving.");
-                            if(await strEconomy && strEconomy.constructor !== String)reject("Not a valid economy string!");
-                            if(await money && money.constructor !== Number)reject("Not a valid value of money!");
-                            if(await strEconomy && !money)reject("strEconomy was specified but not money.");
-                            if(await money && !strEconomy)reject("money was specified but not strEconomy.");
+                            if(await !collection || await collection.constructor !== String) reject("An invalid collection was given!");
+                            if(await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
+                            if(await !string || await  string.constructor !== String)reject("Not a valid inventory string!");
+                            if(await !item || await !supported.includes(item.constructor)) reject("Not a valid item. This function does NOT support bulk giving.");
+                            if(await strEconomy && await strEconomy.constructor !== String)reject("Not a valid economy string!");
+                            if(await money && await money.constructor !== Number)reject("Not a valid value of money!");
+                            if(await strEconomy && await !money)reject("strEconomy was specified but not money.");
+                            if(await money && await !strEconomy)reject("money was specified but not strEconomy.");
 
                             const doc = await getDoc(collection, docID);
                             const ar = await doc[string]; 
