@@ -1,4 +1,4 @@
-const supported =  [String, Object, Number, Array];
+const supported =  [String, Object, Number];
 function main(url, dbName) {
     const mod = this;
     (async function () {
@@ -57,7 +57,7 @@ function main(url, dbName) {
                             if(await !collection ||  collection.constructor !== String) reject("An invalid collection was given!");
                             if(await !docID ||  !supported.includes(docID.constructor)) reject("Not a valid ID!");
                             if(await !string ||  string.constructor !== String)reject("Not a valid inventory string!");
-                            if(await !item || !supported.filter((v) => {return v !== Array;}).includes(item))reject("Not a valid item. This function does NOT support bulk giving.");
+                            if(await !item || !supported.includes(item)) reject("Not a valid item. This function does NOT support bulk giving.");
                             if(await strEconomy && strEconomy.constructor !== String)reject("Not a valid economy string!");
                             if(await money && money.constructor !== Number)reject("Not a valid value of money!");
                             if(await strEconomy && !money)reject("strEconomy was specified but not money.");
