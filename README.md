@@ -1,7 +1,7 @@
 <div style="">
 <img src="https://i.imgur.com/0r8GHp9.png" width="100px" height="100px" style="float: right;" />
 
-<h1 style="border: none; float: left;">node-grau</h1>
+<h1 style="border: none;">node-grau</h1>
 
 <p>A framework for MongoDB Atlas dedicated to Discord bot development. Used by Nefomemes/Kylebot for database purposes.</p>
 
@@ -54,6 +54,7 @@ const db = new grau(process.env.DB, 'main')
 
 - <p>getDoc()</p>
 - <p>updateDoc()</p>
+- <p>giveItem()</p>
 
 #### Properties
 
@@ -68,13 +69,13 @@ const db = new grau(process.env.DB, 'main')
 
 **`getDoc()`**
 
-Get only a single document. If there is no document with that ID, it will be created.
+<p>Get only a single document. If there is no document with that ID, it will be created.</p>
 
 ##### Parameters
 | Parameter | Description | Type |
 | ----------- | ----------- | ---- |
 | `collection` | The collection you want to search the document in. | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) |
-| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | You can use either [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), or [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). |
+| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or message ID. | You can use either [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), or even [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). |
 
 ##### Example
 ```js
@@ -89,13 +90,13 @@ console.log(JSON.stringify(db.getDoc('users', '665419057075585025')))
 
 **updateDoc()**
 
-Update only a single document. If there is no document with that ID, it will be created.
+<p>Update only a single document. If there is no document with that ID, it will be created.</p>
 
 ##### Parameters
 | Parameter | Description | Type |
 | ----------- | ----------- | ---- |
 | `collection` | The collection you want to search the document in. | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) |
-| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or messageID. | You can use either [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), or [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). |
+| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or message ID. | You can use either [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), or even [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). |
 | `operation` | Basically the operation you want to do, like `{$set: value}` or etc. You shouldn't add the `$currentDate` operator as the framework automatically sets it to `true`. | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) |
 
 ##### Example
@@ -108,6 +109,44 @@ console.log(JSON.stringify(db.updateDoc('users', '665419057075585025', {$set: {p
 
 ##### Returns
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> (the updated document).</p>
+
+**giveItem()**
+<p>A function dedicated for user inventory handling (Discord bot development thing). If the</p> `strEconomy` and `money` <p>parameter have been speciefied, and the user already have the item, the user will receive some cash, because, he already own the item.</p>
+
+<p>Note: This function does <bold>NOT</bold> support bulk giving. I will make that in the future.</p>
+
+##### Parameter
+| Parameter | Description | Type |
+| --------- | ----------- | ---- |
+| `collection` | The collection of the document | [String]() |
+| `docID` | The main ID of the document, different than the `_id` property every document have. Let's say the user ID, guild ID, or message ID. | You can use either [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), or even [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). |
+| `string` | The name of the inventory. Let's say you have a property named `items` which stores all items the user have. | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) |
+| `item` | The Item you want to give. This function does NOT support bulk giving. I will make that in the future. | You can use either [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), or [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number). |
+| `strEconomy` (optional) | The name of the property that stores how many cash or money the user have. | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) |
+| `money` (optional) | How much of money or cash you want to give to the user if they already have the item. | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) |
+
+##### Example
+
+With the `strEconomy` and `money` parameter.
+
+```js
+const grau = require("node-grau");
+const db = new grau(url, 'bot')
+
+db.giveItem('users', message.author.id, 'inv', 'grau', 'cash', 1000);
+```
+ 
+<p> Without the  `strEconomy` and `money` parameter.</p>
+
+```js
+const grau = require("node-grau");
+const db = new grau(url, 'bot')
+
+db.giveItem('users', message.author.id, 'inv', 'uav');
+```
+
+##### Returns
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) (The updated document">Object</a> (the updated document).</p>
 
 ## Frequently Asked Question
 
