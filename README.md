@@ -11,6 +11,11 @@
 ```
 npm i node-grau
 ```
+<p>Or this if you use Yarn.</p>
+
+```
+yarn add node-grau
+```
 
 ## Using the framework
 <p>It's simple, as it's a framework ofc.</p>
