@@ -16,11 +16,11 @@ function main(url, dbName) {
                        
                             if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
                             if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
-                            var doc = await db.collection(collection).findOne({ docID: docID });
+                            var doc = await db.collection(collection).findOne({ docID: docID }).then(i => i);
 
                             if (!doc) {
                                 await db.collection(collection).insertOne({ docID: docID })
-                                resolve(await db.collection(collection).findOne({ docID: docID }))
+                                resolve(await db.collection(collection).findOne({ docID: docID }).then(i => i))
                             } else {
                                 resolve(doc);
                             }
