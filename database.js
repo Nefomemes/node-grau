@@ -16,11 +16,11 @@ function main(url, dbName) {
                        
                             if (await !collection || await collection.constructor !== String) reject("An invalid collection was provided.");
                             if (await !docID || await !supported.includes(docID.constructor)) reject("Not a valid ID!");
-                            var doc = await db.collection(collection).findOne({ docID: docID }).then(i => i);
+                            var doc = await db.collection(collection).findOne({ docID: docID });
 
                             if (!doc) {
                                 await db.collection(collection).insertOne({ docID: docID })
-                                resolve(await db.collection(collection).findOne({ docID: docID }).then(i => i))
+                                resolve(await db.collection(collection).findOne({ docID: docID }));
                             } else {
                                 resolve(doc);
                             }
@@ -30,7 +30,8 @@ function main(url, dbName) {
                     }
                 })
             }
-
+      
+            
             function updateDoc(collection, docID, operation) {
                 return new Promise((resolve, reject) => {
                     try {
@@ -50,6 +51,7 @@ function main(url, dbName) {
                     }
                 })
             }
+       
             function giveItem(collection, docID, string, item, strEconomy, money){
                 return new Promise((resolve, reject) => {
                     try {
@@ -84,7 +86,7 @@ function main(url, dbName) {
                     }
                 })
             }
-
+           
             mod.updateDoc = updateDoc;
             mod.getDoc    = getDoc;
             mod.giveItem = giveItem;
