@@ -13,6 +13,7 @@
 
 <p>Grau 5.56 was an overpowered assault rifle in Call of Duty: Modern Warfare and its Warzone. Unline the Bruen MK9 that have became a trash gun, this rifle survived the nerf that have been implemented since the "Season 4: Reloaded" update. This rifle is still commonly used across multiple gunfights and engagements across Verdansk(the name of the BR  ap in Modern Warfare's Warzone). It has decent recoil, decent damage range, and absolutely one of the go to rifle in Modern Warfare's Warzone.</p>
 
+<p>Update 1.1.0 will introduce a set of new syntaxes, that will be flexible and powerful, but still using the official MongoDB Node,js driver. Basically, this framework is a modified version of it.</p>
 
 API reference is not yet done as we will change how this framework works.
 
