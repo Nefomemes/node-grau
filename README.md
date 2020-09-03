@@ -11,9 +11,5 @@
 
 <p>A MongoDB Atlas framework dedicated for Discord bot development. Used by <a href="https://github.com/Nefomemes/Kylebot">Nefomemes/Kylebot</a> for database purposes.</p>
 
-<p></p>
-
-
-
-<div><image src="https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif"></image></br>Funfact: I stole the GIF from 'An Idiot's Guide Official </div>
+API reference is not yet done as we will change how this framework works.
 
