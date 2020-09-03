@@ -1,7 +1,10 @@
 
 const supported =  [String, Object, Number];
-function main(url, dbName) {
+class GrauClient {
     const mod = this;
+constructor(connectionURL){
+    mod.connectionURL = connectionURL;
+}
     (async function () {
         const { MongoClient } = require("mongodb");
         const assert = require("assert");
@@ -14,4 +17,4 @@ function main(url, dbName) {
         });
     })();
 }
-module.exports = main;
+module.exports = GrauClient;
