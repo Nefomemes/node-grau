@@ -1,5 +1,5 @@
 
-<img src="https://i.imgur.com/0r8GHp9.png" width="100px" height="100px" style="float: right;" />
+<img src="https://i.imgur.com/jRLmdla.jpg" width="100px" height="100px" style="float: right;" />
 <h1 style="border: none;">node-grau</h1>
 <img src="https://nodei.co/npm/node-grau.png?compact=true"/> <br/>
 <img alt="npm" src="https://img.shields.io/npm/dt/node-grau?style=flat-square&logo=npm&color=blue" style="margin-right: 1px;">
@@ -15,5 +15,7 @@
 
 <p>Update 1.1.0 will introduce a set of new syntaxes, that will be flexible and powerful, but still using the official MongoDB Node,js driver. Basically, this framework is a modified version of it.</p>
 
-API reference is not yet done as we will change how this framework works.
+<p>The Grau vector is made by Gordon#2059. But I have added some changes though. It's not the same as the in-gane model, but at least it resembles it. Btw, I am on mobile so it will look less detailed on the modified parts.</p>
+
+API reference is not yet done as we will change how this framework works in update 1.1.0.
 
