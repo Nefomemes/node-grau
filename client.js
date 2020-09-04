@@ -4,9 +4,10 @@ const supported =  [String, Object, Number];
 class GrauClient extends MongoClient {
     const mod = this;
     (async function () {
-     
-        const assert = require("assert");
-            
+ await super.connect();
+          
+              
+   
             
            
            
