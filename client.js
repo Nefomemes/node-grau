@@ -11,8 +11,8 @@ constructor(connectionURL){
 
         MongoClient.connect(url, function (err, dbClient) {
             assert.equal(null, err);
-            mod.client = dbClient;
-            db = dbClient.db(dbName);
+            mod.nativeClient = dbClient;
+           
             
         });
     })();
