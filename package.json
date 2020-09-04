@@ -17,8 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "mongodb": "^3.5.9",
-    "underscorejs":"latest"
-    
+    "underscore":  "^1.10.2"
   },
   "repository": {
     "type": "git",
