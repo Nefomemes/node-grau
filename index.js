@@ -5,7 +5,7 @@ require("mongodb").Collection.prototype.getDoc = function getDoc(query) {
             (async function () {
                 var doc = await collection.findOne(query);
                 if (!doc) {
-                    await collection.insertOne(query)
+                    await collection.insertOne(query);
                     resolve(await collection.findOne(query));
                 } else {
                     resolve(doc);
@@ -23,7 +23,7 @@ require("mongodb").Collection.prototype.updateDoc = function updateDoc(query, op
             (async function () {
         if(!docID || !operation)reject("One or more parameters are missing.");
                 await collection.getDoc(query);
-                await collection.updateOne(query, { ...operation})
+                await collection.updateOne(query, { ...operation});
                 resolve(await collection.getDoc(query));
             })()
         } catch (e) {
