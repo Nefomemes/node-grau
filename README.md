@@ -20,7 +20,7 @@
 <p>¯\_(ツ)_/¯, I use this for my projects. Which you know, copy and pasting the utility module isn't that great. So I publish it to NPM anyways.</p> 
 
 <h2>API Reference</h2>
-<p>As this is basically an addon for the official MongoDB Node.js driver. We will use <code>>package_name<</code> to help you understanding things here.</p>
+<p>As this is basically an addon for the official MongoDB Node.js driver. But instead of importing the <code>mongodb</code> module directly. You will need to import the property <code>mongodb</code> from the <code>node-grau</code> module./p>
 
 <h3>Addons</h3>
 <p>Here are full in-depth API reference of add-ons we implemented to the MongoDB Node.js Driver.</p>
