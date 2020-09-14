@@ -1,4 +1,6 @@
-require("mongodb").Collection.prototype.getDoc = function getDoc(query) {
+var mongodb = require("mongodb")
+
+mongodb.Collection.prototype.getDoc = function getDoc(query) {
     const collection = this;
     return new Promise( (resolve, reject) => {
         try {
@@ -16,7 +18,7 @@ require("mongodb").Collection.prototype.getDoc = function getDoc(query) {
         }
     })
 }
-require("mongodb").Collection.prototype.updateDoc = function updateDoc(query, operation) {
+mongodb.Collection.prototype.updateDoc = function updateDoc(query, operation) {
     const collection = this;
     return new Promise((resolve, reject) => {
         try {
@@ -32,7 +34,7 @@ require("mongodb").Collection.prototype.updateDoc = function updateDoc(query, op
     })
 }
 
-require("mongodb").Collection.prototype.giveItem = function giveItem(query, string, item, economyOptions){
+mongodb.Collection.prototype.giveItem = function giveItem(query, string, item, economyOptions){
    const collection = this;
     return new Promise((resolve, reject) => {
         try {
@@ -60,3 +62,4 @@ require("mongodb").Collection.prototype.giveItem = function giveItem(query, stri
     })
 }
 
+module.exports.mongodb = mongodb;
