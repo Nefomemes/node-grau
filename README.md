@@ -11,7 +11,8 @@
 
 <p>     A small but powerful and flexible MongoDB Atlas framework dedicated for Discord bot development. Used by <a href="https://github.com/Nefomemes/Kylebot">Nefomemes/Kylebot</a> for database purposes.</p>
 
-<p>     Grau 5.56 was an overpowered assault rifle in Call of Duty: Modern Warfare and its Warzone. Unline the Bruen MK9 that have became a trash gun, this rifle survived the nerf that have been implemented since the "Season 4: Reloaded" update. This rifle is still commonly used across multiple gunfights and engagements across Verdansk(the name of the BR  ap in Modern Warfare's Warzone). It has decent recoil, decent damage range, and absolutely one of the go to rifle in Modern Warfare's Warzone.</p>
+<p>     Grau 5.56 was an overpowered assault rifle in Call of Duty: Modern Warfare and its Warzone. Unline the Bruen MK9 that have became a trash gun, this rifle survived the nerf that have been implemented since the "Season 4: Reloaded" update. This rifle is still commonly used across multiple gunfights and engagements across Verdansk(the name of the BR  
+    map in Modern Warfare's Warzone). It has decent recoil, decent damage range, and absolutely one of the go to rifle in Modern Warfare's Warzone.</p>
 
 <p>     The Grau vector is made by Gordon#2059. But I have added some changes though. It's not the same as the in-gane model, but at least it resembles it. Btw, I am on mobile so it will look less detailed on the modified parts.</p>
 
