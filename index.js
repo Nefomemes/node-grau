@@ -23,7 +23,7 @@ mongodb.Collection.prototype.updateDoc = function updateDoc(query, operation) {
     return new Promise((resolve, reject) => {
         try {
             (async function () {
-        if(!docID || !operation)reject("One or more parameters are missing.");
+        if(!query || !operation)reject("One or more parameters are missing.");
                 await collection.getDoc(query);
                 await collection.updateOne(query, { ...operation});
                 resolve(await collection.getDoc(query));
