@@ -2,6 +2,9 @@ var mongodb = require("mongodb")
 
 /**
 * Get a document that matches the query given. If none matches, a document that matches the query given will be created
+* 
+* @function
+* @returns Promise
 */
 mongodb.Collection.prototype.findOneOrCreate = function findOneOrCreate(query) {
     const collection = this;
