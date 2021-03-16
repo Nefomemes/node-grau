@@ -1,5 +1,8 @@
 var mongodb = require("mongodb")
 
+/**
+* Get a document that matches the query given. If none matches, a document that matches the query given will be created
+*/
 mongodb.Collection.prototype.getDoc = function getDoc(query) {
     const collection = this;
     return new Promise( (resolve, reject) => {
