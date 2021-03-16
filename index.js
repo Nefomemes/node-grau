@@ -24,14 +24,14 @@ mongodb.Collection.prototype.findOneOrCreate = function findOneOrCreate(query) {
         }
     })
 };
-mongodb.Collection.prototype.updateDoc = function updateDoc(query, operation) {
+mongodb.Collection.prototype.updateDoc = function updateDoc(query, operation, options) {
     const collection = this;
     return new Promise((resolve, reject) => {
         try {
             (async function () {
         if(!query || !operation)reject("One or more parameters are missing.");
-                await collection.getDoc(query);
-                await collection.updateOne(query, { ...operation});
+                await collection.findOneOrCreate(query);
+                await collection.updateOne(query, operation );
                 resolve(await collection.getDoc(query));
             })()
         } catch (e) {
