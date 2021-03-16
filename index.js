@@ -17,7 +17,7 @@ mongodb.Collection.prototype.getDoc = function getDoc(query) {
             reject(e);
         }
     })
-}
+};
 mongodb.Collection.prototype.updateDoc = function updateDoc(query, operation) {
     const collection = this;
     return new Promise((resolve, reject) => {
@@ -32,7 +32,7 @@ mongodb.Collection.prototype.updateDoc = function updateDoc(query, operation) {
             reject(e);
         }
     })
-}
+};
 
 mongodb.Collection.prototype.giveItem = function giveItem(query, string, item, economyOptions){
    const collection = this;
